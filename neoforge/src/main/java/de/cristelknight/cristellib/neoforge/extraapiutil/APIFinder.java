@@ -34,7 +34,7 @@ public class APIFinder {
                 try {
                     clazz = (Class<CristelLibAPI>) Class.forName(ad.memberName());
                 } catch (ClassNotFoundException e) {
-                    CristelLib.LOGGER.error("Failed to load api class {} for @CristelPlugin annotation", ad.clazz(), e);
+                    CristelLib.LOGGER.error("Failed to load api class: " + ad.clazz() + " for @CristelPlugin annotation", e);
                     continue;
                 }
                 try {

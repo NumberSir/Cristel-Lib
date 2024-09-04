@@ -1,5 +1,6 @@
 package de.cristelknight.cristellib.builtinpacks;
 
+import de.cristelknight.cristellib.CristelLib;
 import de.cristelknight.cristellib.CristelLibExpectPlatform;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -41,9 +42,10 @@ public class BuiltInDataPacks {
 				// Add the built-in pack only if namespaces for the specified resource type are present.
 				if (!pack.getNamespaces(PackType.SERVER_DATA).isEmpty()) {
 					// Make the resource pack profile for built-in pack, should never be always enabled.
+					Component displayName = entry.getA().getA();
 					PackLocationInfo info = new PackLocationInfo(
 							pack.packId(),
-							entry.getA().getA(),
+							displayName,
 							new BuiltinResourcePackSource(),
 							pack.knownPackInfo()
 					);
@@ -65,6 +67,11 @@ public class BuiltInDataPacks {
 							return pack;
 						}
 					}, PackType.SERVER_DATA, info2);
+
+					if(profile == null){
+                        CristelLib.LOGGER.error("Pack Profile with display name: {} is null", displayName);
+						return;
+					}
 					consumer.accept(profile);
 				}
 			}

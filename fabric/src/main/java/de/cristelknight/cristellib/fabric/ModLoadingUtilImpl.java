@@ -19,7 +19,7 @@ public class ModLoadingUtilImpl {
             try {
                 min = Version.parse(minVersion);
             } catch (VersionParsingException e) {
-                CristelLib.LOGGER.error("Couldn't parse version: " + minVersion);
+                CristelLib.LOGGER.error("Couldn't parse version: {}", minVersion);
                 return false;
             }
             return version.compareTo(min) >= 0;

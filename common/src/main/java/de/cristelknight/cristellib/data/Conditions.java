@@ -12,9 +12,8 @@ public class Conditions {
         JsonArray array = object.get("condition").getAsJsonArray();
         boolean bl = true;
         for(JsonElement e : array){
-            if(e instanceof JsonObject o){
-                if(!readCondition(o)) bl = false;
-            }
+            if(!(e instanceof JsonObject o)) continue;
+            if(!readCondition(o)) bl = false;
         }
 
         return bl;

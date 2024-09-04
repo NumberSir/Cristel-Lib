@@ -27,7 +27,6 @@ public class CristelLib {
 
     public static void preInit(){
         BuiltInDataPacks.registerPack(DATA_PACK, Component.literal("Cristel Lib Config Pack"), () -> true);
-
         CristelLibRegistry.configs = ImmutableMap.copyOf(CristelLibExpectPlatform.getConfigs(REGISTRY));
 
         for(Set<StructureConfig> pack : CristelLibRegistry.getConfigs().values()){

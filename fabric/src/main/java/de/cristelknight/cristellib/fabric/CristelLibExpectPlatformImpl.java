@@ -61,7 +61,7 @@ public class CristelLibExpectPlatformImpl {
                 configs.put(modId, set);
                 api.registerStructureSets(registry);
             } catch (Throwable e) {
-                CristelLib.LOGGER.error("Mod {} provides a broken implementation of CristelLibRegistry", modId, e);
+                CristelLib.LOGGER.error("Mod: " + modId + " provides a broken implementation of CristelLibAPI", e);
             }
         });
         Util.addAll(configs, data(registry));

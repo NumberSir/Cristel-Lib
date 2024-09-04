@@ -56,14 +56,14 @@ public class CristelLibExpectPlatformImpl {
         if (modList == null) {
             ModInfo info = getPreLoadedModInfo(modId);
             if (info == null) {
-                CristelLib.LOGGER.warn("Mod info for modId:" + modId + " is null");
+                CristelLib.LOGGER.warn("Mod info for modId: {} is null", modId);
                 return null;
             }
             file = info.getOwningFile().getFile();
         } else {
             ModContainer container = modList.getModContainerById(modId).orElse(null);
             if (container == null) {
-                CristelLib.LOGGER.warn("Mod container for modId:" + modId + " is null");
+                CristelLib.LOGGER.warn("Mod container for modId: {} is null", modId);
                 return null;
             }
             file = container.getModInfo().getOwningFile().getFile();
@@ -71,7 +71,7 @@ public class CristelLibExpectPlatformImpl {
 
         Path path = file.findResource(subPath);
         if (path == null) {
-            CristelLib.LOGGER.warn("Path for subPath: " + subPath + " in modId: " + modId + " is null");
+            CristelLib.LOGGER.warn("Path for subPath: {} in modId: {} is null", subPath, modId);
         }
         return path;
     }

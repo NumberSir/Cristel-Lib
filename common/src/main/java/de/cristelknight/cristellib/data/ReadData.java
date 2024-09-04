@@ -77,8 +77,6 @@ public class ReadData {
             String name = object.get("display_name").getAsString();
 
             ResourceLocation rl = ResourceLocation.tryParse(location);
-            CristelLib.LOGGER.error(rl);
-
             Component component = Component.literal(name);
 
                 /*
@@ -180,8 +178,8 @@ public class ReadData {
                 StructureConfig config = StructureConfig.createWithDefaultConfigPath(subPath, name, ConfigType.valueOf(object.get("config_type").getAsString().toUpperCase()));
                 JsonArray sets = object.get("structure_sets").getAsJsonArray();
                 for(JsonElement e : sets){
-                    if(e instanceof JsonObject o && o.has("structure_set") && o.has("modId")){
-                        String mS = o.get("modId").getAsString();
+                    if(e instanceof JsonObject o && o.has("structure_set") && o.has("modid")){
+                        String mS = o.get("modid").getAsString();
                         JsonArray array = o.get("structure_set").getAsJsonArray();
                         for(JsonElement s : array){
                             if(s instanceof JsonPrimitive primitive){

@@ -65,7 +65,7 @@ public class ConfigUtil {
             String output = config.getHeader() + "\n" + object.toJson(JSON_GRAMMAR);
             Files.write(path, output.getBytes());
         } catch (IOException e) {
-            CristelLib.LOGGER.error("Couldn't create Enable Disable Config for Path {}", path, e);
+            CristelLib.LOGGER.error("Couldn't create Enable Disable Config for Path: " + path, e);
         }
     }
 
@@ -91,7 +91,7 @@ public class ConfigUtil {
             String output = config.getHeader() + "\n" + object.toJson(JSON_GRAMMAR);
             Files.write(path, output.getBytes());
         } catch (IOException e) {
-            CristelLib.LOGGER.error("Couldn't create Placement Config for Path {}", path, e);
+            CristelLib.LOGGER.error("Couldn't create Placement Config for Path: " + path, e);
         }
     }
 

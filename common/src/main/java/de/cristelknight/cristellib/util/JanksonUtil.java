@@ -19,7 +19,7 @@ public class JanksonUtil {
                 currentElement = object.get(segment);
 
                 if (currentElement == null) {
-                    CristelLib.LOGGER.error("Path segment not found: " + segment);
+                    CristelLib.LOGGER.error("Path segment not found: {}", segment);
                     return;
                 }
             } else {
