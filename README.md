@@ -54,6 +54,8 @@ The file structure should look like this:
 - **"header"** is the text, which will be at the top of your config file.
 - **"comments"** is a map where the keys indicate the location where the comment should appear.
 
+***
+
 ### Loading a datapack
 In your folder you'll have to make another called `data_packs`. In this folder you will create files which will load the datapacks you want.
 In the folder you need to create a new json file with any name you like.
